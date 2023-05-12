@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  background-color: #D697FF;
+  justify-content: center;
+  font-size: x-large;
+}
+
+h1 {
+  font-family: fantasy;
+  text-shadow: 2px 2px 8px #C264FF;
+}
