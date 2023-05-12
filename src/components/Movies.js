@@ -15,7 +15,7 @@ function Movies ({movies}){
   })
 
   return (
-  <div>
+  <div className="movie-list">
     {movieCards}
   </div>
   )

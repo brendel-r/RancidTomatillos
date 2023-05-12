@@ -3,8 +3,8 @@ import './Header.css'
 
 function Header () {
 return (
-  <header>
-    <h1>Welcome Peeps</h1>
+  <header className="header">
+    <h1>Welcome to Rancid Tomatillos</h1>
   </header>
 )
 

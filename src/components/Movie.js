@@ -4,7 +4,7 @@ import "./Movie.css"
 const Movie = ({poster, title, id, rating}) => {
   const rndRating = Math.round(rating)
   return (
-    <div>
+    <div className="movie-card">
       <img src={poster} />
       <h2>{title}</h2>
       <p>{rndRating}</p>
