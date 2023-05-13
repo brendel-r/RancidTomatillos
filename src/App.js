@@ -18,16 +18,25 @@ class App extends React.Component {
     const newState = { ...this.state };
     newState.movies = movieData.movies;
 
-    this.setState({ newState })
+    this.setState(newState)
+  }
+
+  updateMovieId = (id) => {
+    const newState = { ...this.state };
+    newState.movieId = id;
+
+    this.setState(newState)
   }
 
   showMovieInfo = () => {
     if (!this.state.movieId) {
-      return <Movies movies={this.state.movies} />
-    } else {
-      return <MovieDetail movie={this.state.movieId} />
+      return <Movies movies={this.state.movies} updateMovieId={this.updateMovieId}/>
     }
+      return <MovieDetail movie={this.state.movieId} updateMovieId={this.updateMovieId}/>
+    
   }
+
+
 
   render() {
     return (
