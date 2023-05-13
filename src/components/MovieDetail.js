@@ -18,10 +18,14 @@ class MovieDetail extends React.Component {
     }
   }
 
-
-  render() {
+  closeDetail = () => {
+    this.props.updateMovieId('')
+  }
+  
+  render(){
     return (
       <>
+        <button onClick={()=>this.closeDetail()}>X</button>
         <img src={this.state.backdrop_path} />
         <div>
           <h1>{this.state.title}</h1>
@@ -30,6 +34,7 @@ class MovieDetail extends React.Component {
           <p>{this.state.genres}</p>
           <p>{this.state.runtime} minutes</p>
           <p>{this.state.overview}</p>
+
         </div>
       </>
     )
@@ -37,5 +42,6 @@ class MovieDetail extends React.Component {
   }
 
 }
+
 
 export default MovieDetail;

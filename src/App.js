@@ -10,7 +10,7 @@ class App extends React.Component {
     super()
     this.state = {
       movies: [],
-      movieId: '1'
+      movieId: ''
     }
   }
 
@@ -21,13 +21,22 @@ class App extends React.Component {
     this.setState(newState)
   }
 
+  updateMovieId = (id) => {
+    const newState = { ...this.state };
+    newState.movieId = id;
+
+    this.setState(newState)
+  }
+
   showMovieInfo = () => {
     if (!this.state.movieId) {
-      return <Movies movies={this.state.movies} />
+      return <Movies movies={this.state.movies} updateMovieId={this.updateMovieId}/>
     }
-      return <MovieDetail movie={this.state.movieId} />
+      return <MovieDetail movie={this.state.movieId} updateMovieId={this.updateMovieId}/>
     
   }
+
+
 
   render() {
     return (
