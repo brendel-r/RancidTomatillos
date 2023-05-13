@@ -6,10 +6,13 @@ const formatRatings = (movieList) => {
   })
 }
 
-const formatRating = (movie) => {
+const formatMovieInfo = (movie) => {
   const singleMovie = movie
   singleMovie.average_rating = Math.round(movie.average_rating)
+  // singleMovie.release_date = 
   return singleMovie
 }
 
-export {formatRatings, formatRating}
+
+
+export {formatRatings, formatMovieInfo}

@@ -17,13 +17,16 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    fetchApi().then((data) => {
-      const newState = { ...this.state };
+    let newState = { ...this.state };
+    fetchApi()
+    .then((data) => {
       newState.movies = formatRatings(data.movies);
   
       this.setState(newState)
-    }).catch((error) => {
-
+    })
+    .catch((error) => {
+      newState.error = true;
+      this.setState(newState)
     })
   }
 
@@ -48,6 +51,7 @@ class App extends React.Component {
     return (
       <main>
         <Header />
+        {this.state.error && <h2>Something went wrong! Try again later!</h2>}
         {this.showMovieInfo()}
       </main>
     )
