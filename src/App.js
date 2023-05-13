@@ -2,23 +2,30 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header';
 import Movies from './components/Movies';
-import MovieDetail from './components/MovieDetail'
+import MovieDetail from './components/MovieDetail';
 import movieData from './sampledata';
+import { fetchApi } from './apiCalls';
+import formatRating from './utilities';
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       movies: [],
-      movieId: ''
+      movieId: '',
+      error: ''
     }
   }
 
   componentDidMount = () => {
-    const newState = { ...this.state };
-    newState.movies = movieData.movies;
+    fetchApi().then((data) => {
+      const newState = { ...this.state };
+      newState.movies = formatRating(data.movies);
+  
+      this.setState(newState)
+    }).catch((error) => {
 
-    this.setState(newState)
+    })
   }
 
   updateMovieId = (id) => {
