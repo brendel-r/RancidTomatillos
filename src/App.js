@@ -3,16 +3,15 @@ import React from 'react';
 import Header from './components/Header';
 import Movies from './components/Movies';
 import MovieDetail from './components/MovieDetail';
-import movieData from './sampledata';
 import { fetchApi } from './apiCalls';
-import formatRating from './utilities';
+import { formatRatings } from './utilities';
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       movies: [],
-      movieId: '',
+      movieId: null,
       error: ''
     }
   }
@@ -20,7 +19,7 @@ class App extends React.Component {
   componentDidMount = () => {
     fetchApi().then((data) => {
       const newState = { ...this.state };
-      newState.movies = formatRating(data.movies);
+      newState.movies = formatRatings(data.movies);
   
       this.setState(newState)
     }).catch((error) => {

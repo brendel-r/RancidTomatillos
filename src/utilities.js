@@ -1,4 +1,4 @@
-const formatRating = (movieList) => {
+const formatRatings = (movieList) => {
   return movieList.map((movie) => {
     const currentMovie = {...movie};
     currentMovie.average_rating = Math.round(movie.average_rating)
@@ -6,4 +6,10 @@ const formatRating = (movieList) => {
   })
 }
 
-export default formatRating
+const formatRating = (movie) => {
+  const singleMovie = movie
+  singleMovie.average_rating = Math.round(movie.average_rating)
+  return singleMovie
+}
+
+export {formatRatings, formatRating}
