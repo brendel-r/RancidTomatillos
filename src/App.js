@@ -1,30 +1,43 @@
 import './App.css';
 import React from 'react';
-import Header from './components/Header'
+import Header from './components/Header';
 import Movies from './components/Movies';
+import MovieDetail from './components/MovieDetail'
 import movieData from './sampledata';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state= {
-      movies: []
+    this.state = {
+      movies: [],
+      movieId: ''
     }
   }
 
-  componentDidMount =() =>{
-    this.setState({movies: movieData.movies})
+  componentDidMount = () => {
+    const newState = { ...this.state };
+    newState.movies = movieData.movies;
+
+    this.setState({ newState })
   }
 
-  render(){
-    return(
+  showMovieInfo = () => {
+    if (!this.state.movieId) {
+      return <Movies movies={this.state.movies} />
+    } else {
+      return <MovieDetail movie={this.state.movieId} />
+    }
+  }
+
+  render() {
+    return (
       <main>
         <Header />
-        <Movies movies={this.state.movies}/>
+        {this.showMovieInfo()}
       </main>
     )
   }
 }
- 
+
 
 export default App;
