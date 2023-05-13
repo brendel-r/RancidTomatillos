@@ -21,6 +21,6 @@ function Movies ({movies, updateMovieId}){
     {movieCards}
   </div>
   )
-}
+};
 
 export default Movies; 
