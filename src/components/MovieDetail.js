@@ -6,18 +6,6 @@ class MovieDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // id: null,
-      // title: "",
-      // poster_path: "",
-      // backdrop_path: "",
-      // release_date: "",
-      // overview: "",
-      // average_rating: null,
-      // genres: [],
-      // budget: null,
-      // revenue: null,
-      // runtime: null,
-      // tagline: "",
       movieInfo: {},
       error: ""
     };
@@ -48,10 +36,10 @@ class MovieDetail extends React.Component {
         <div>
           {this.state.error && <h2>Something went wrong! Try again later!</h2>}
           <h1>{this.state.movieInfo.title}</h1>
-          <p>{this.state.movieInfo.average_rating} / 10 ⭐️'s!</p>
+          <p>Rating: {this.state.movieInfo.average_rating}/ 10 ⭐️'s!</p>
           <p>Release Date: {this.state.movieInfo.release_date}</p>
-          <p>{this.state.movieInfo.genres}</p>
-          <p>{this.state.movieInfo.runtime} minutes</p>
+          <p>Genre: {this.state.movieInfo.genres}</p>
+          <p>Duration: {this.state.movieInfo.runtime}</p>
           <p>{this.state.movieInfo.overview}</p>
         </div>
       </>
