@@ -1,8 +1,7 @@
 
 .movie-detail-display {
   display: flex;
-  
-  font-family: fantasy;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: x-large;
   background: radial-gradient(circle at center,purple, fuchsia, #994bec), 100%;
   padding: 10px;
@@ -14,6 +13,7 @@
 }
 .detail-bottom {
   margin: 20px;
+  height: 617px;
   padding-left: 20px;
   background-color: rgba(214, 151, 255, 0.3);
   border-radius: 30px;
@@ -21,7 +21,14 @@
 
 .return-button {
   height: 50px;
-  font-size: larger;
+  font-size:xx-large;
+  border-radius: 20px;
+  width: 1065px;
+}
+
+.return-button:hover {
+  background-color: fuchsia;
+  cursor: pointer;
 }
 .movie-detail-img {
   margin-top: 25px;
