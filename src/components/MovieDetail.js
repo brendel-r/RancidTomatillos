@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { fetchApi } from "../apiCalls";
 import { formatMovieInfo } from "../utilities";
 
@@ -6,18 +7,6 @@ class MovieDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // id: null,
-      // title: "",
-      // poster_path: "",
-      // backdrop_path: "",
-      // release_date: "",
-      // overview: "",
-      // average_rating: null,
-      // genres: [],
-      // budget: null,
-      // revenue: null,
-      // runtime: null,
-      // tagline: "",
       movieInfo: {},
       error: ""
     };
@@ -58,5 +47,10 @@ class MovieDetail extends React.Component {
     );
   }
 }
+
+MovieDetail.propTypes = {
+  updateMovieId: PropTypes.func.isRequired,
+  movie: PropTypes.number.isRequired,
+  };
 
 export default MovieDetail;
