@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { fetchApi } from "../apiCalls";
 import { formatMovieInfo } from "../utilities";
+import './MovieDetail.css';
 
 class MovieDetail extends React.Component {
   constructor(props) {
@@ -31,19 +32,21 @@ class MovieDetail extends React.Component {
 
   render() {
     return (
-      <>
-        <button onClick={() => this.closeDetail()}>X</button>
-        <img src={this.state.movieInfo.backdrop_path} />
-        <div>
+      <div className="movie-detail-display">
+        <div className="detail-top">
+          <img  className="movie-detail-img" src={this.state.movieInfo.backdrop_path} />
+          <button className="return-button" onClick={() => this.closeDetail()}>Return to Movie List</button>
+        </div>
+        <div className="detail-bottom">
           {this.state.error && <h2>Something went wrong! Try again later!</h2>}
           <h1>{this.state.movieInfo.title}</h1>
-          <p>{this.state.movieInfo.average_rating} / 10 ⭐️'s!</p>
+          <p>Rating: {this.state.movieInfo.average_rating}/ 10 ⭐️'s!</p>
           <p>Release Date: {this.state.movieInfo.release_date}</p>
-          <p>{this.state.movieInfo.genres}</p>
-          <p>{this.state.movieInfo.runtime} minutes</p>
+          <p>Genre: {this.state.movieInfo.genres}</p>
+          <p>Duration: {this.state.movieInfo.runtime}</p>
           <p>{this.state.movieInfo.overview}</p>
         </div>
-      </>
+      </div>
     );
   }
 }
