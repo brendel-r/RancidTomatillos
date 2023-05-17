@@ -1,7 +1,7 @@
 
 .movie-detail-display {
   display: flex;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
   font-size: x-large;
   background: radial-gradient(circle at center,purple, fuchsia, #994bec), 100%;
   padding: 10px;
