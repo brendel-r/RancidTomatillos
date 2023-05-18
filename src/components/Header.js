@@ -1,10 +1,11 @@
 import React from "react";
 import './Header.css'
+import logo from '../recLogo-transparent.png'
 
 function Header () {
 return (
   <header className="header">
-    <h1>Welcome to Rancid Tomatillos</h1>
+    <img className="rancid-logo" src={logo} alt="Rancid Tomatillos"/>
   </header>
 )
 

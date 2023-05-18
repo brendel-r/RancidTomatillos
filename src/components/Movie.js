@@ -9,9 +9,8 @@ const Movie = ({ poster, title, id, rating, updateMovieId }) => {
 
   return (
     <div className="movie-card" onClick={handleClick}>
-      <img src={poster} alt={title + "movie poster"} />
-      <h2>{title}</h2>
-      <p>{rating}</p>
+      <img className="card-poster"src={poster} alt={title + "movie poster"} />
+      <p className="card-rating">{rating} / 10 ⭐️</p>
     </div>
   );
 };
