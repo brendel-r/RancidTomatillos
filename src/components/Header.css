@@ -1,11 +1,11 @@
 header {
+  height: 20%;
+  width: 100%;
   display: flex;
-  background-color: #D697FF;
-  justify-content: center;
-  font-size: x-large;
+  justify-content: end;
 }
 
-h1 {
-  font-family: fantasy;
-  text-shadow: 2px 2px 8px #C264FF;
+.rancid-logo {
+  height: 120px;
+  padding: 5px;
 }

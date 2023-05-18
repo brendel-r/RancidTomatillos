@@ -1,38 +1,45 @@
-
-.movie-detail-display {
+.movie-detail-container {
+  box-sizing: border-box;
+  width: 90%;
+  padding: 15px;
   display: flex;
-
-  font-size: x-large;
-  background: radial-gradient(circle at center,purple, fuchsia, #994bec), 100%;
-  padding: 10px;
-  height: 15%;
-  margin: 10px;
+  flex-direction: column;
+  background: radial-gradient(circle at center, purple, fuchsia, #994bec), 100%;
   border: 2px solid rgb(170, 25, 227);
   box-shadow: -2px 0px 6px 0px fuchsia;
   border-radius: 30px;
 }
-.detail-bottom {
-  margin: 20px;
-  height: 617px;
-  padding-left: 20px;
-  background-color: rgba(214, 151, 255, 0.3);
+
+.movie-detail-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.movie-detail-img {
+  box-sizing: border-box;
+  height: 15%;
+  border: 2px solid rgb(170, 25, 227);
+  box-shadow: -2px 0px 6px 0px fuchsia;
   border-radius: 30px;
 }
 
+.movie-detail{
+  background-color: rgba(214, 151, 255, 0.3);
+  border-radius: 30px;
+  padding: 0px 15px;
+  margin: 15px 0px;
+}
+
 .return-button {
-  height: 50px;
-  font-size:xx-large;
+  height: 40px;
+  font-size: 1rem;
   border-radius: 20px;
-  width: 1065px;
   background-color: #D697FF;
 }
 
 .return-button:hover {
   background-color: fuchsia;
   cursor: pointer;
-}
-.movie-detail-img {
-  margin-top: 25px;
-  height: 600px;
-  box-shadow: -2px 0px 6px 0px fuchsia;
 }
