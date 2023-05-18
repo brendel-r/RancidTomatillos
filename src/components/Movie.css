@@ -1,7 +1,6 @@
 
 .movie-card {
   box-sizing: border-box;
-  height: 250px;
   width: 15%;
   display: flex;
   margin: 10px;
