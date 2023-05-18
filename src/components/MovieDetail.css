@@ -32,6 +32,11 @@
   margin: 15px 0px;
 }
 
+.detail-title{
+  font-family: fantasy;
+  
+}
+
 .return-button {
   height: 40px;
   font-size: 1rem;
