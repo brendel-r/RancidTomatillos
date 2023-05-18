@@ -32,7 +32,16 @@ describe('Movie detail page', () => {
     cy.get("main header img").should('have.attr', "alt", "Rancid Tomatillos");
   });
 
-  it("Should open a  detail page when a movie card is clicked", () => {
+  it("should display an error if reponse is not ok", () => {
+    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919", {
+      statusCode: 500,
+      body: "Error loading movie"
+    })
+    cy.get("main").get(".movie-list").find(".movie-card").first().click()
+    .get("h2").contains("Something went wrong! Try again later!");
+  });
+
+  it("should open a detail page when a movie card is clicked", () => {
     cy.get("main").get(".movie-list").find(".movie-card").first().click()
       .url().should('eq', "http://localhost:3000/694919")
       .get(".movie-detail-container").find('img').should('have.attr', "src", "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg")
@@ -42,11 +51,9 @@ describe('Movie detail page', () => {
       .next().contains("Genre: Drama")
       .next().contains("Duration: 2 Hours 19 Minutes")
       .next().contains("Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!")
-      .get(".return-button").click()
-      .url().should('eq', "http://localhost:3000/")
   })
 
-  it("Should go to landing page when return is clicked", () => {
+  it("should go to landing page when return is clicked", () => {
     cy.get("main").get(".movie-list").find(".movie-card").first().click()
       .get(".movie-detail-container").find('.return-button').click()
       .url().should('eq', "http://localhost:3000/")

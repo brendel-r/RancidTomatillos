@@ -9,7 +9,8 @@ class MovieDetail extends React.Component {
     super(props);
     this.state = {
       movieInfo: {},
-      error: ""
+      error: '',
+      errorStatus: null
     };
   }
 
@@ -33,10 +34,11 @@ class MovieDetail extends React.Component {
   render() {
     return (
       <section className="movie-detail-container">
+        {this.state.errorStatus >= 500 && <h2>Something went wrong! Try again later!</h2>}
+        {this.state.errorStatus >= 500 && <h2>Movie not found. Please select a different movie!</h2>}
         <div className="movie-detail-display">
           <img className="movie-detail-img" src={this.state.movieInfo.backdrop_path} />
           <div className="movie-detail">
-            {this.state.error && <h2>Something went wrong! Try again later!</h2>}
             <h1 className="detail-title">{this.state.movieInfo.title}</h1>
             <p>Rating: {this.state.movieInfo.average_rating} / 10 ⭐️</p>
             <p>Release Date: {this.state.movieInfo.release_date}</p>
