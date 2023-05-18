@@ -32,13 +32,23 @@ describe('Movie detail page', () => {
     cy.get("main header img").should('have.attr', "alt", "Rancid Tomatillos");
   });
 
-  it("should display an error if reponse is not ok", () => {
+  it("should display an error if the movie fails to load", () => {
     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919", {
       statusCode: 500,
       body: "Error loading movie"
     })
     cy.get("main").get(".movie-list").find(".movie-card").first().click()
     .get("h2").contains("Something went wrong! Try again later!");
+  });
+
+  it("should display an error if the movie does not exist", () => {
+    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919", {
+      statusCode: 404,
+      body: "Movie does not exist"
+    })
+    cy.get("main").get(".movie-list").find(".movie-card").first().click()
+    .get("h2")
+    .contains("Movie not found. Please select a different movie!");
   });
 
   it("should open a detail page when a movie card is clicked", () => {

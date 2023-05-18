@@ -10,7 +10,7 @@ class MovieDetail extends React.Component {
     this.state = {
       movieInfo: {},
       error: '',
-      errorStatus: null
+      errorCode: null
     };
   }
 
@@ -27,6 +27,7 @@ class MovieDetail extends React.Component {
       })
       .catch((error) => {
         newState.error = true;
+        newState.errorStatus = error.message
         this.setState(newState);
       });
   };
@@ -34,8 +35,12 @@ class MovieDetail extends React.Component {
   render() {
     return (
       <section className="movie-detail-container">
-        {this.state.errorStatus >= 500 && <h2>Something went wrong! Try again later!</h2>}
-        {this.state.errorStatus >= 500 && <h2>Movie not found. Please select a different movie!</h2>}
+      {this.state.errorStatus === '404' && (
+        <h2>Movie not found. Please select a different movie!</h2>
+      )}
+      {this.state.errorStatus !== '404' && (
+        <h2>Something went wrong! Try again later!</h2>
+      )}
         <div className="movie-detail-display">
           <img className="movie-detail-img" src={this.state.movieInfo.backdrop_path} />
           <div className="movie-detail">
