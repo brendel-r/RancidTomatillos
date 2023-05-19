@@ -5,7 +5,7 @@ class FilterForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selection: {},
+      selection: null,
     };
     this.options = [
       { value: 2, label: "2 ⭐️ & Up" },
@@ -20,14 +20,19 @@ class FilterForm extends React.Component {
     ];
   };
 
-  handleChange = (value) => {
-    this.setState({ selection: value });
+  handleChange = (choice) => {
+    this.setState({ selection: choice });
   };
 
   submitForm = (event) => {
     event.preventDefault();
-    console.log(this.state.selection.value)
     this.props.updateFilteredList(this.state.selection.value)
+  };
+
+  clearForm = (event) => {
+    event.preventDefault();
+    this.setState({ selection:{} })
+    this.props.updateFilteredList(1)
   };
 
   render() {
@@ -37,10 +42,13 @@ class FilterForm extends React.Component {
         <Select
           id="selection"
           options={this.options}
+          value={this.state.selection}
           onChange={(value) => {
             this.handleChange(value);
           }}
         />
+        <button type="submit">Show me the movies!!</button>
+        <button onClick={(event) => this.clearForm(event)}>Clear filter</button>
       </form>
     );
   }
