@@ -2,14 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { fetchApi } from "../apiCalls";
 import { formatMovieInfo } from "../utilities";
-import './MovieDetail.css';
+import "./MovieDetail.css";
 
 class MovieDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       movieInfo: {},
-      error: '',
       errorCode: null
     };
   }
@@ -27,7 +26,7 @@ class MovieDetail extends React.Component {
       })
       .catch((error) => {
         newState.error = true;
-        newState.errorStatus = error.message
+        newState.errorStatus = error.message;
         this.setState(newState);
       });
   };
@@ -35,14 +34,17 @@ class MovieDetail extends React.Component {
   render() {
     return (
       <section className="movie-detail-container">
-      {this.state.errorStatus === '404' && (
-        <h2>Movie not found. Please select a different movie!</h2>
-      )}
-      {this.state.errorStatus !== '404' && (
-        <h2>Something went wrong! Try again later!</h2>
-      )}
+        {this.state.errorCode === 404 && (
+          <h2>Movie not found. Please select a different movie!</h2>
+        )}
+        {this.state.errorCode && this.state.errorCode !==  404 && (
+          <h2>Something went wrong! Try again later!</h2>
+        )}
         <div className="movie-detail-display">
-          <img className="movie-detail-img" src={this.state.movieInfo.backdrop_path} />
+          <img
+            className="movie-detail-img"
+            src={this.state.movieInfo.backdrop_path}
+          />
           <div className="movie-detail">
             <h1 className="detail-title">{this.state.movieInfo.title}</h1>
             <p>Rating: {this.state.movieInfo.average_rating} / 10 ⭐️</p>
@@ -52,7 +54,9 @@ class MovieDetail extends React.Component {
             <p>{this.state.movieInfo.overview}</p>
           </div>
         </div>
-        <button className="return-button" onClick={() => this.closeDetail()}>Return to Movie List</button>
+        <button className="return-button" onClick={() => this.closeDetail()}>
+          Return to Movie List
+        </button>
       </section>
     );
   }

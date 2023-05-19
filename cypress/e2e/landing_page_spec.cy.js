@@ -28,4 +28,4 @@ describe("Landing Page", () => {
       .get('img').last().should('have.attr', "src", "https://image.tmdb.org/t/p/original//kiX7UYfOpYrMFSAGbI6j1pFkLzQ.jpg")
       .get('p').last().contains('5')
   });
-});
+});n
