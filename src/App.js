@@ -12,24 +12,25 @@ class App extends React.Component {
     super()
     this.state = {
       movies: [],
+      filteredMovies: [],
       movieId: null,
       error: ''
     }
-  }
+  };
 
   componentDidMount = () => {
     let newState = { ...this.state };
     fetchApi()
       .then((data) => {
         newState.movies = formatRatings(data.movies);
-
+        newState.filteredMovies = [...newState.movies];
         this.setState(newState)
       })
       .catch((error) => {
         newState.error = true;
         this.setState(newState)
       })
-  }
+  };
 
   updateMovieId = (id) => {
     const newState = { ...this.state };
@@ -38,15 +39,17 @@ class App extends React.Component {
     this.setState(newState, () => {
       this.props.history.push(`/${id}`);
     })
-  }
+  };
 
-  showMovieInfo = () => {
-    if (!this.state.movieId) {
-      return <Movies movies={this.state.movies} updateMovieId={this.updateMovieId} />
-    }
-    return <MovieDetail movie={this.state.movieId} updateMovieId={this.updateMovieId} />
+  updateFilteredList = (selection) => {
+    const filteredList = this.state.movies.filter(movie => 
+      movie.average_rating >= selection
+    );
 
-  }
+    const newAppState = {...this.state};
+    newAppState.filteredMovies = filteredList;
+    this.setState(newAppState);
+  };
 
   render() {
     return (
@@ -54,14 +57,14 @@ class App extends React.Component {
         <Header />
         {this.state.error && <h2>Something went wrong! Try again later!</h2>}
         <Switch>
-          <Route exact path="/" render={() => <Movies movies={this.state.movies} updateMovieId={this.updateMovieId} />} />
+          <Route exact path="/" render={() => this.state.filteredMovies? <Movies movies={this.state.filteredMovies} updateMovieId={this.updateMovieId} updateFilteredList={this.updateFilteredList}/>:<h2>No Movies Found!!</h2>} />
           <Route path="/:movieId" render={({ match }) => <MovieDetail movie={match.params.movieId} updateMovieId={this.updateMovieId} />} />
         </Switch>
 
       </main>
     )
-  }
-}
+  };
+};
 
 
 export default withRouter(App);
