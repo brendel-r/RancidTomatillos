@@ -57,7 +57,7 @@ class App extends React.Component {
         <Header />
         {this.state.error && <h2>Something went wrong! Try again later!</h2>}
         <Switch>
-          <Route exact path="/" render={() => this.state.filteredMovies? <Movies movies={this.state.filteredMovies} updateMovieId={this.updateMovieId} updateFilteredList={this.updateFilteredList}/>:<h2>No Movies Found!!</h2>} />
+          <Route exact path="/" render={() => <Movies movies={this.state.filteredMovies} updateMovieId={this.updateMovieId} updateFilteredList={this.updateFilteredList}/>}/>
           <Route path="/:movieId" render={({ match }) => <MovieDetail movie={match.params.movieId} updateMovieId={this.updateMovieId} />} />
         </Switch>
 
