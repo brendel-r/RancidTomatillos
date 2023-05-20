@@ -54,9 +54,7 @@ class MovieDetail extends React.Component {
             <p>{this.state.movieInfo.overview}</p>
           </div>
         </div>
-        <button className="return-button" onClick={() => this.closeDetail()}>
-          Return to Movie List
-        </button>
+        <button className="return-button" onClick={() => this.closeDetail()}>Return to Movie List</button>
       </section>
     );
   }

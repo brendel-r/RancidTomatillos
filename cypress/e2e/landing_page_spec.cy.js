@@ -28,4 +28,31 @@ describe("Landing Page", () => {
       .get('img').last().should('have.attr', "src", "https://image.tmdb.org/t/p/original//kiX7UYfOpYrMFSAGbI6j1pFkLzQ.jpg")
       .get('p').last().contains('5')
   });
-});n
+
+  it("should allow user to filter movies by ratings", () => {
+    cy.get(".form-container").find("label").contains("Filter by rating")
+      .get(".react-select__control").click()
+      .get(".react-select__menu").find(".react-select__option").first().next().next().next().next().click()
+      .get(".submit-button").click()
+      .get(".movie-card").should("have.length", 4)
+  });
+
+  it("should allow user to clear filter and reload main movie list", () => {
+    cy.get(".form-container").find("label").contains("Filter by rating")
+      .get(".react-select__control").click()
+      .get(".react-select__menu").find(".react-select__option").first().next().next().next().next().click()
+      .get(".submit-button").click()
+      .get(".movie-card").should("have.length", 4)
+      .get(".clear-button").click()
+      .get(".movie-card").should("have.length", 8)
+  });
+
+  it("should allow user to filter movies by ratings", () => {
+    cy.get(".form-container").find("label").contains("Filter by rating")
+      .get(".react-select__control").click()
+      .get(".react-select__menu").find(".react-select__option").last().click()
+      .get(".submit-button").click()
+      .get(".movie-card").should("have.length", 0)
+      .get("h2").contains("No movies found! Pick another rating.")
+  });
+});
