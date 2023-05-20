@@ -19,12 +19,12 @@ function Movies({ movies, updateMovieId, updateFilteredList }) {
   });
 
   return (
-    <>
-      <div>
+    <div className="display-styling">
+      <div className="filter-form">
         <FilterForm updateFilteredList={updateFilteredList} />
       </div>
       <div className="movie-list">{movieCards}</div>
-    </>
+    </div>
   );
 }
 

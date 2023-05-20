@@ -3,5 +3,16 @@
   background-color: #D697FF;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
 
+.filter-form {
+  padding-left: 18px;
+  width: 19vw ;
+}
+
+.display-styling{
+  display: flex;
+  flex-direction: column;
+  justify-items: right ;
+}
