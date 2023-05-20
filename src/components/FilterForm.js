@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import "./FilterForm.css";
 
 class FilterForm extends React.Component {
   constructor(props) {
@@ -37,9 +38,10 @@ class FilterForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={(event) => this.submitForm(event)}>
-        <label htmlFor="selection">Filter by rating!</label>
-        <Select
+      
+      <form className="form-container" onSubmit={(event) => this.submitForm(event)}>
+        <label className="submit-label" htmlFor="selection">Filter by rating</label>
+        <Select 
           id="selection"
           options={this.options}
           value={this.state.selection}
@@ -47,9 +49,12 @@ class FilterForm extends React.Component {
             this.handleChange(value);
           }}
         />
-        <button type="submit">Show me the movies!!</button>
-        <button onClick={(event) => this.clearForm(event)}>Clear filter</button>
+        <div className="buttons">
+        <button className="submit-button" type="submit">Show movies</button>
+        <button className="clear-button" onClick={(event) => this.clearForm(event)}>Clear filter</button>
+        </div>
       </form>
+      
     );
   }
 }
