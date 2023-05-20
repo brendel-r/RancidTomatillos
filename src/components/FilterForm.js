@@ -1,6 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import "./FilterForm.css";
+import PropTypes from "prop-types";
 
 class FilterForm extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class FilterForm extends React.Component {
         <label className="submit-label" htmlFor="selection">Filter by rating</label>
         <Select 
           id="selection"
+          classNamePrefix={"react-select"}
           options={this.options}
           value={this.state.selection}
           onChange={(value) => {
@@ -54,9 +56,12 @@ class FilterForm extends React.Component {
         <button className="clear-button" onClick={(event) => this.clearForm(event)}>Clear filter</button>
         </div>
       </form>
-      
     );
   }
 }
+
+FilterForm.propTypes = {
+  updateFilteredList: PropTypes.func.isRequired
+};
 
 export default FilterForm;

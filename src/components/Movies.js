@@ -23,6 +23,7 @@ function Movies({ movies, updateMovieId, updateFilteredList }) {
       <div className="filter-form">
         <FilterForm updateFilteredList={updateFilteredList} />
       </div>
+      {movies.length <= 0 && <h2>No movies found! Pick another rating.</h2>}
       <div className="movie-list">{movieCards}</div>
     </div>
   );
@@ -38,6 +39,7 @@ Movies.propTypes = {
     })
   ).isRequired,
   updateMovieId: PropTypes.func.isRequired,
+  updateFilteredList: PropTypes.func.isRequired
 };
 
 export default Movies;
