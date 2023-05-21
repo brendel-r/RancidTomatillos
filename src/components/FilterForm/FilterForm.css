@@ -1,7 +1,7 @@
 .form-container {
   box-sizing: border-box;
   width: 100%;
-  padding: 10px;
+  padding: 10px 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,28 +12,28 @@
   background: radial-gradient(circle at center, purple, fuchsia, #994bec), 100%;
 }
 
-.form-content{
+.form-content {
   box-sizing: border-box;
   width: 60%;
   display: flex;
 }
 
-/* .clear-container{
-  border: green 2px solid;
-} */
-
 .css-b62m3t-container {
-    position: relative;
-    box-sizing: border-box;
-    margin: 0px 10px;
-    width: 40%;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0px 15px;
+  width: 40%;
 }
 
-.react-select__control{
+.react-select__control {
   width: 100%;
 }
 
-.react-select__value{
+.react-select__control:hover {
+  cursor: pointer;
+}
+
+.react-select__value {
   width: 100%;
 }
 
@@ -41,24 +41,24 @@
   align-self: center;
   align-content: center;
   font-family: fantasy;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 .submit-button,
 .clear-button {
-  box-sizing: border-box;
   padding: 10px;
   text-align: center;
   font-size: 1rem;
-  border: 1px solid #D697FF ;
+  border-radius: 20px;
   background-color: #D697FF;
   box-shadow: -2px 0px 6px 0px fuchsia;
 }
 
+
 .submit-button:hover,
 .clear-button:hover {
   box-sizing: border-box;
-  border: 3px solid fuchsia;
+  border-color: fuchsia;
   cursor: pointer;
 }
