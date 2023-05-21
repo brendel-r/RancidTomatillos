@@ -1,11 +1,10 @@
 import './App.css';
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import Header from './components/Header';
-import Movies from './components/Movies';
-import MovieDetail from './components/MovieDetail';
+import Header from './components/Header/Header';
+import Movies from './components/Movies/Movies';
+import MovieDetail from './components/MovieDetail/MovieDetail';
 import { fetchApi } from './apiCalls';
-import { formatRatings } from './utilities';
 
 class App extends React.Component {
   constructor() {
@@ -14,50 +13,43 @@ class App extends React.Component {
       movies: [],
       filteredMovies: [],
       movieId: null,
-      error: ''
+      error: false
     }
   };
 
   componentDidMount = () => {
-    let newState = { ...this.state };
     fetchApi()
       .then((data) => {
-        newState.movies = formatRatings(data.movies);
-        newState.filteredMovies = [...newState.movies];
-        this.setState(newState)
+        this.setState({ movies: data.movies })
+        this.setState({ filteredMovies: data.movies })
       })
       .catch((error) => {
-        newState.error = true;
-        this.setState(newState)
+        this.setState({ error: true })
       })
   };
 
   updateMovieId = (id) => {
-    const newState = { ...this.state };
-    newState.movieId = id;
-
-    this.setState(newState, () => {
+    this.setState({ movieId: id }, () => {
       this.props.history.push(`/${id}`);
     })
   };
 
   updateFilteredList = (selection) => {
-    const filteredList = this.state.movies.filter(movie => 
+    const filteredList = this.state.movies.filter(movie =>
       movie.average_rating >= selection
     );
-
-    const newAppState = {...this.state};
-    newAppState.filteredMovies = filteredList;
-    this.setState(newAppState);
+    this.setState({ filteredMovies: filteredList });
   };
 
   render() {
+    const { filteredMovies, error } = this.state;
+
     return (
       <main>
         <Header />
-        {this.state.error && <h2>Something went wrong! Try again later!</h2>}
+        {error && <h2>Something went wrong! Try again later!</h2>}
         <Switch>
-          <Route exact path="/" render={() => <Movies movies={this.state.filteredMovies} updateMovieId={this.updateMovieId} updateFilteredList={this.updateFilteredList}/>}/>
+          <Route exact path="/" render={() => <Movies movies={filteredMovies} updateMovieId={this.updateMovieId} updateFilteredList={this.updateFilteredList} />} />
           <Route path="/:movieId" render={({ match }) => <MovieDetail movie={match.params.movieId} updateMovieId={this.updateMovieId} />} />
         </Switch>
 
@@ -65,6 +57,5 @@ class App extends React.Component {
     )
   };
 };
-
 
 export default withRouter(App);

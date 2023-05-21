@@ -1,37 +1,39 @@
 .form-container {
+  width: 25%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   border: 2px solid rgb(170, 25, 227);
   box-shadow: -2px 0px 6px 0px fuchsia;
   border-radius: 30px;
-  width: 150%;
   background: radial-gradient(circle at center, purple, fuchsia, #994bec), 100%;
 }
 
 .submit-label {
-  font-family: fantasy;
-  font-size: 180%;
-  font-weight: 700;
   padding-bottom: 10px;
+  font-family: fantasy;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .buttons {
-display: flex;
-justify-content:space-evenly;
-padding-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.submit-button, .clear-button {
-  font-size: larger;
+.submit-button,
+.clear-button {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
   border-radius: 20px;
   background-color: #D697FF;
   box-shadow: -2px 0px 6px 0px fuchsia;
-  padding: 10px 10px 5px;
 }
 
-.submit-button:hover, .clear-button:hover {
+.submit-button:hover,
+.clear-button:hover {
   border: fuchsia;
   cursor: pointer;
 }
-

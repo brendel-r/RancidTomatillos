@@ -27,7 +27,7 @@ describe('Movie detail page', () => {
         }
       })
   });
-  
+
   it("should display Rancid Tomatillos in the header", () => {
     cy.get("main header img").should('have.attr', "alt", "Rancid Tomatillos");
   });
@@ -38,7 +38,7 @@ describe('Movie detail page', () => {
       body: "Error loading movie"
     })
     cy.get("main").get(".movie-list").find(".movie-card").first().click()
-    .get("h2").contains("Something went wrong! Try again later!");
+      .get("h2").contains("Something went wrong! Try again later!");
   });
 
   it("should display an error if the movie does not exist", () => {
@@ -47,8 +47,8 @@ describe('Movie detail page', () => {
       body: "Movie does not exist"
     })
     cy.get("main").get(".movie-list").find(".movie-card").first().click()
-    .get("h2")
-    .contains("Movie not found. Please select a different movie!");
+      .get("h2")
+      .contains("Movie not found. Please select a different movie!");
   });
 
   it("should open a detail page when a movie card is clicked", () => {
