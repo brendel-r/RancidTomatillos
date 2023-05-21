@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+Introducing Rancid Tomatillos, the ultimate movie companion app for avid film enthusiasts. With Rancid Tomatillos, you can effortlessly browse a vast library of movies and select any film to access detailed information. The app's intuitive interface makes it a breeze to navigate through the extensive collection and discover hidden cinematic gems. Rancid Tomatillos also offers a convenient filtering option, allowing you to narrow down your search based on ratings, ensuring you only see movies that match your preferences. With Rancid Tomatillos, your movie-watching experience will reach new heights of convenience and enjoyment.
 
-## Available Scripts
+## Goals and Objectives
+- Gain competency with React fundamentals
+- Learn how to test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
 
-In the project directory, you can run:
+## Features
+  - Browse all movies
+  - View single movie details
+  - Filter movies by rating
 
-### `npm start`
+## Context 
+ Creating a great app with a partner using React, Cypress, JavaScript, HTML, and CSS is an exciting and collaborative journey. React, a popular JavaScript library, provides a solid foundation for building dynamic and responsive user interfaces, ensuring a smooth and interactive app experience. JavaScript, the backbone of web development, allows you to add functionality and interactivity to your app, making it more engaging for users.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+With HTML and CSS, you can craft visually appealing and well-structured web pages, ensuring a seamless user experience and a visually pleasing design. CSS enables you to style your app's elements, while HTML provides the structure and content.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To ensure the quality and reliability of your app, integrating Cypress, a powerful end-to-end testing framework, is crucial. Cypress allows you to write automated tests to verify the functionality of your app, ensuring that it works flawlessly across different browsers and devices.
 
-### `npm test`
+Collaborating with a partner on this app development journey brings a wealth of benefits. You can share ideas, divide tasks, and leverage each other's strengths to create a well-rounded and polished app. Communication and teamwork are key to successfully combining these technologies and creating a stellar app that exceeds user expectations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Preview
+![preview]()
+  
+## Set Up
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributors
+  - Sharie Trachsel [GitHub](https://github.com/sdtrachsel) / [LinkedIn](https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAABss4R8BNSe3nOdV7w-2lNYAkkqo9KAph7E&keywords=sharie%20trachsel&origin=RICH_QUERY_SUGGESTION&position=0&searchId=91dfcc3a-5845-47d5-a755-e3edb8422645)
+  
+  - Rachel Brendel [GitHub](https://github.com/brendel-r) / [LinkedIn](https://www.linkedin.com/in/rachel-brendel-bb9673197/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
+  - Javascript
+  - HTML
+  - CSS
+  - React
+  - Cypress
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Sources
+  - [MDN](http://developer.mozilla.org/en-US/)
+  - [W3Schools](https://www.w3schools.com/)
+  - [ReactDocs](https://react.dev/reference/react)
+  - [CypressDocs](https://docs.cypress.io/guides/overview/why-cypress)
