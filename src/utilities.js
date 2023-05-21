@@ -4,10 +4,10 @@ import dayjs from "dayjs";
 const formatRatings = (movieList) => {
   return movieList.map((movie) => {
     const currentMovie = {...movie};
-    currentMovie.average_rating = Math.round(movie.average_rating)
+    currentMovie.average_rating = Math.round(movie.average_rating);
     return currentMovie
-  })
-}
+  });
+};
 
 const formatMovieInfo = (movie) => {
   const singleMovie = movie;
@@ -16,8 +16,9 @@ const formatMovieInfo = (movie) => {
   singleMovie.runtime = `${hours} Hours ${minutes} Minutes`;
   singleMovie.release_date = dayjs(singleMovie.release_date).format('MMM DD, YYYY');
   singleMovie.average_rating = Math.round(movie.average_rating);
+  singleMovie.genres = singleMovie.genres.join("/");
 
   return singleMovie;
-}
+};
 
 export {formatRatings, formatMovieInfo}
