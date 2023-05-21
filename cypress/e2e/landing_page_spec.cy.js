@@ -8,7 +8,7 @@ describe("Landing Page", () => {
     })
       .visit("http://localhost:3000/")
   });
-  
+
   it("should display an error if api response is not ok", () => {
     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
       statusCode: 500,

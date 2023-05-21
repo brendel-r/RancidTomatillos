@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Movies.css";
-import Movie from "./Movie";
-import FilterForm from "./FilterForm";
+import Movie from "../Movie/Movie"
+import FilterForm from "../FilterForm/FilterForm";
 
 function Movies({ movies, updateMovieId, updateFilteredList }) {
   const movieCards = movies.map((movie) => {

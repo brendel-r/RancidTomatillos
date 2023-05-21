@@ -7,7 +7,7 @@ class FilterForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selection: null,
+      selection: {},
     };
     this.options = [
       { value: 2, label: "2 ⭐️ & Up" },
@@ -28,21 +28,20 @@ class FilterForm extends React.Component {
 
   submitForm = (event) => {
     event.preventDefault();
-    this.props.updateFilteredList(this.state.selection.value)
+    this.props.updateFilteredList(this.state.selection.value);
   };
 
   clearForm = (event) => {
     event.preventDefault();
-    this.setState({ selection:{} })
-    this.props.updateFilteredList(1)
+    this.setState({ selection: {} });
+    this.props.updateFilteredList(1);
   };
 
   render() {
     return (
-      
       <form className="form-container" onSubmit={(event) => this.submitForm(event)}>
         <label className="submit-label" htmlFor="selection">Filter by rating</label>
-        <Select 
+        <Select
           id="selection"
           classNamePrefix={"react-select"}
           options={this.options}
@@ -52,13 +51,13 @@ class FilterForm extends React.Component {
           }}
         />
         <div className="buttons">
-        <button className="submit-button" type="submit">Show movies</button>
-        <button className="clear-button" onClick={(event) => this.clearForm(event)}>Clear filter</button>
+          <button className="submit-button" type="submit">Show movies</button>
+          <button className="clear-button" onClick={(event) => this.clearForm(event)}>Clear filter</button>
         </div>
       </form>
     );
-  }
-}
+  };
+};
 
 FilterForm.propTypes = {
   updateFilteredList: PropTypes.func.isRequired
