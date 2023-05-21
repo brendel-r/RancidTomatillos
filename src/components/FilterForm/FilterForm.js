@@ -40,7 +40,8 @@ class FilterForm extends React.Component {
   render() {
     return (
       <form className="form-container" onSubmit={(event) => this.submitForm(event)}>
-        <label className="submit-label" htmlFor="selection">Filter by rating</label>
+        <div className="form-content">
+        <label className="submit-label" htmlFor="selection">Filter by rating: </label>
         <Select
           id="selection"
           classNamePrefix={"react-select"}
@@ -50,10 +51,12 @@ class FilterForm extends React.Component {
             this.handleChange(value);
           }}
         />
-        <div className="buttons">
-          <button className="submit-button" type="submit">Show movies</button>
-          <button className="clear-button" onClick={(event) => this.clearForm(event)}>Clear filter</button>
-        </div>
+          <button className="submit-button" type="submit">Show Movies</button>
+          </div>
+          <div className="clear-container">
+          <button className="clear-button" onClick={(event) => this.clearForm(event)}>Clear Filter</button>
+          </div>
+        
       </form>
     );
   };

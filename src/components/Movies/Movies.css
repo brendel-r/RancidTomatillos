@@ -6,9 +6,9 @@
 }
 
 .filter-form {
+  box-sizing: border-box;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 18px;
 }
 
 .display-styling {
