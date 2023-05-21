@@ -24,7 +24,11 @@ To ensure the quality and reliability of your app, integrating Cypress, a powerf
 Collaborating with a partner on this app development journey brings a wealth of benefits. You can share ideas, divide tasks, and leverage each other's strengths to create a well-rounded and polished app. Communication and teamwork are key to successfully combining these technologies and creating a stellar app that exceeds user expectations.
 
 ## Preview
-![preview]()
+Main view with movie detail
+![preview](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzE3ODU0ZGJlMjNmNWEzMTJkN2Y5NjVhZmIxNTQxNzA1MWJjNzNhNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1RpNcqDoRlmATuNpFs/giphy-downsized-large.gif)
+
+Filtered movie view-
+![preview](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTE0NzZmZGNiMjMyNzA0Y2Q4ODQ4M2Q5NzQ0NDI2YjViZjQ2NDJlZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/5ELERhFJFUG9ndS0Vs/giphy.gif)
   
 ## Set Up
 
