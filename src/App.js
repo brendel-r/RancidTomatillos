@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Movies from './components/Movies/Movies';
 import MovieDetail from './components/MovieDetail/MovieDetail';
 import { fetchApi } from './apiCalls';
+import { formatRatings } from './utilities';
 
 class App extends React.Component {
   constructor() {
@@ -20,8 +21,8 @@ class App extends React.Component {
   componentDidMount = () => {
     fetchApi()
       .then((data) => {
-        this.setState({ movies: data.movies })
-        this.setState({ filteredMovies: data.movies })
+        this.setState({ movies: formatRatings(data.movies) })
+        this.setState({ filteredMovies: formatRatings(data.movies) })
       })
       .catch((error) => {
         this.setState({ error: true })

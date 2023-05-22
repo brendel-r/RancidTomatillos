@@ -1,12 +1,11 @@
-
 .movie-card {
   box-sizing: border-box;
-  width: 15%;
+  width: 150px;
   display: flex;
   margin: 10px;
   padding: 10px;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background: radial-gradient(circle at center,purple, fuchsia, #994bec), 100%;
   border: 2px solid rgb(170, 25, 227);
   border-radius: 30px;

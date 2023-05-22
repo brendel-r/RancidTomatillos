@@ -20,10 +20,14 @@ class MovieDetail extends React.Component {
   componentDidMount = () => {
     fetchApi(this.props.movie)
       .then((data) => {
-        this.setState({ movieInfo: data.movie });
+        this.setState({ movieInfo: formatMovieInfo(data.movie) });
       })
       .catch((error) => {
-        this.setState({ errorCode: error.message });
+        console.log(error.message)
+        this.setState({ errorCode: error.message }, () => {
+
+          console.log(this.state)
+        });
       });
   };
 
@@ -32,10 +36,10 @@ class MovieDetail extends React.Component {
 
     return (
       <section className="movie-detail-container">
-        {errorCode === 404 && (
+        {errorCode === '404' &&( 
           <h2>Movie not found. Please select a different movie!</h2>
         )}
-        {errorCode && errorCode !== 404 && (
+        {errorCode && errorCode !== '404' && (
           <h2>Something went wrong! Try again later!</h2>
         )}
         <div className="movie-detail-display">

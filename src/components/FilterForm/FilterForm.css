@@ -1,25 +1,48 @@
 .form-container {
-  width: 25%;
-  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
   border: 2px solid rgb(170, 25, 227);
   box-shadow: -2px 0px 6px 0px fuchsia;
-  border-radius: 30px;
+  border-radius: 20px;
   background: radial-gradient(circle at center, purple, fuchsia, #994bec), 100%;
 }
 
-.submit-label {
-  padding-bottom: 10px;
-  font-family: fantasy;
-  font-size: 1.5rem;
-  font-weight: 700;
+.form-content {
+  box-sizing: border-box;
+  width: 60%;
+  display: flex;
 }
 
-.buttons {
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-evenly;
+.css-b62m3t-container {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0px 15px;
+  width: 40%;
+}
+
+.react-select__control {
+  width: 100%;
+}
+
+.react-select__control:hover {
+  cursor: pointer;
+}
+
+.react-select__value {
+  width: 100%;
+}
+
+.submit-label {
+  align-self: center;
+  align-content: center;
+  font-family: fantasy;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .submit-button,
@@ -32,8 +55,10 @@
   box-shadow: -2px 0px 6px 0px fuchsia;
 }
 
+
 .submit-button:hover,
 .clear-button:hover {
-  border: fuchsia;
+  box-sizing: border-box;
+  border-color: fuchsia;
   cursor: pointer;
 }
