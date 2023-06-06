@@ -15,7 +15,7 @@ Introducing Rancid Tomatillos, the ultimate movie companion app for avid film en
   - Filter movies by rating
 
 ## Context 
- Creating a great app with a partner using React, Cypress, JavaScript, HTML, and CSS is an exciting and collaborative journey. React, a popular JavaScript library, provides a solid foundation for building dynamic and responsive user interfaces, ensuring a smooth and interactive app experience. JavaScript, the backbone of web development, allows you to add functionality and interactivity to your app, making it more engaging for users.
+Creating a great app with a partner using React, Cypress, JavaScript, HTML, and CSS is an exciting and collaborative journey. React, a popular JavaScript library, provides a solid foundation for building dynamic and responsive user interfaces, ensuring a smooth and interactive app experience. JavaScript, the backbone of web development, allows you to add functionality and interactivity to your app, making it more engaging for users.
 
 With HTML and CSS, you can craft visually appealing and well-structured web pages, ensuring a seamless user experience and a visually pleasing design. CSS enables you to style your app's elements, while HTML provides the structure and content.
 
@@ -26,6 +26,8 @@ Collaborating with a partner on this app development journey brings a wealth of 
 ## Preview
 ![Rancid Tomatillos Preview](https://github.com/brendel-r/rancidtomatillos/assets/122052199/b712f160-ca8d-47fb-821b-cf7ddc33ba07)
 
+## Deployed Site
+[Rancid Tomatillos](https://rancidtomatillos-ixhhro0ky-brendel-r.vercel.app/)
   
 ## Set Up
 1. Fork and clone this repo
